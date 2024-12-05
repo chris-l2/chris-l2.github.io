@@ -7,7 +7,7 @@
 body {
   height: 100vh;
   display: flex;
-  background: #060AB2;
+  background-image: url(images/red-dead-redemption-2-evening-4k-17-1920x1080.jpg);
 }
 
 .memory-game {
@@ -27,7 +27,6 @@ body {
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform .5s;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
 
 .memory-card:active {
@@ -45,11 +44,164 @@ body {
   height: 100%;
   padding: 20px;
   position: absolute;
-  border-radius: 5px;
-  background: #1C7CCC;
+  border-radius: 10px;
+  background: #cec1c1;
   backface-visibility: hidden;
 }
 
 .front-face {
   transform: rotateY(180deg);
 }
+
+.modal{
+  padding: 1.5em;
+  margin: auto;
+  border: 0;
+  box-shadow: 0 0 2em #ec85e7;
+  width: 550px;
+  border-radius: 15px;
+  height: 390px;
+
+}
+.modal::backdrop{
+  background:#e9c9e5;
+}
+.tete{
+  text-align: center;
+}
+.contenu{
+  display: flex;
+  flex-direction: row;
+}
+.texte{
+ margin: 20px;
+}
+a{
+  text-decoration: none;
+}
+p{
+  padding: 1px;
+}
+.pied{
+  text-align: center;
+}
+.design{
+  font-style: italic;
+}
+#automne{
+  padding: 10px;
+}
+#nonFenetre{
+  font-style: italic;
+  padding: 10px; 
+}
+#nonFenetre:hover{
+  color: #ffb6fb;
+  scale: 1;
+  
+  transition: 200ms ease-in-out;
+  animation-name: nonfenetre;
+  animation-duration: 1.5s;
+}
+@keyframes nonfenetre {
+  0%{
+    opacity: 100%;
+
+  }
+  100%{
+    opacity: 60%;
+    transition-timing-function: ease-in-out;
+  }
+}
+.cache{
+  display: none;
+}
+.affiche{
+  display: block;
+}
+hr{
+  margin: auto;
+  width: 60%;
+  border-top: 1px solid rgba(93, 188, 251, 0.5);
+}
+#bouton{
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(93, 188, 251, 0.5);
+  height: 40px;
+  width: 140px;
+}
+#bouton:hover{
+  transition: 200ms ease-in-out;
+  animation-name: bouton;
+  animation-duration: 1.5s;
+  background-color: #ffb6fb;
+  scale: 1;
+}
+@keyframes bouton{
+  0%{
+    background-color: rgba(93, 188, 251, 0.5);
+    transition-timing-function: ease-in;
+  }
+  100%{
+    background-color: #ffb6fb;
+    transition-timing-function: ease-out;
+  }
+}
+#titre1{
+  margin-top: 50%;
+  margin: auto;
+  font-size:x-large;
+  padding: 20px;
+}
+#conteneur-confettis{
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.z-index{
+  z-index: 1;
+}
+#carte{
+  background-color: #eebb92;
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 1.2em #ffffff;
+  padding: 2rem;
+}
+#carte p{
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+}
+.confetti {
+  position: absolute;
+  top: 0;
+  font-size: 1.6rem;
+  animation: confetti-tombe linear 5s infinite;
+}
+
+@keyframes confetti-tombe {
+  0%{
+    transform: translateY(-100%) rotate(0);
+  }
+  100%{
+    transform: translateY(100vh) rotate(180deg);
+  }
+}
+.hidden{
+  display: none;
+}
+
+
+
+
+

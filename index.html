@@ -1,68 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
 
-  <title>Memory Game</title>
+  <title>Jeux de mémoire</title>
 
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <section class="memory-game">
-    <div class="memory-card" data-framework="aurelia">
-      <img class="front-face" src="../img/aurelia.svg" alt="Aurelia" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+  <div id="conteneur-confettis">
+    <div id="carte">
+      <p>Bravo!!</p>
     </div>
-    <div class="memory-card" data-framework="aurelia">
-      <img class="front-face" src="../img/aurelia.svg" alt="Aurelia" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
-    </div>
+  </div>
+  <section class="memory-game" >
+      <div class="memory-card" data-framework="arthur">
+        <img class="front-face" src="images/arthur.jpg" alt="Arthur">
+        <img class="back-face" src="images/RDR.jpg" alt="RDR2">
+      </div>
+      <div class="memory-card" data-framework="arthur">
+        <img class="front-face" src="images/arthur.jpg" alt="Arthur">
+        <img class="back-face" src="images/RDR.jpg" alt="RDR2">
+      </div>
 
-    <div class="memory-card" data-framework="vue">
-      <img class="front-face" src="../img/vue.svg" alt="Vue" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="vue">
-      <img class="front-face" src="../img/vue.svg" alt="Vue" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
-    </div>
+      <div class="memory-card" data-framework="john">
+        <img class="front-face" src="images/john.jpg" alt="John">
+        <img class="back-face" src="images/RDR.jpg" alt="RDR2">
+      </div>
+      <div class="memory-card" data-framework="john">
+        <img class="front-face" src="images/john.jpg" alt="John">
+        <img class="back-face" src="images/RDR.jpg" alt="RDR2">
+      </div>
 
-    <div class="memory-card" data-framework="angular">
-      <img class="front-face" src="../img/angular.svg" alt="Angular" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="angular">
-      <img class="front-face" src="../img/angular.svg" alt="Angular" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
-    </div>
+      <div class="memory-card" data-framework="saddie">
+        <img class="front-face" src="images/sadie.jpg" alt="Saddie">
+        <img class="back-face" src="images/RDR.jpg" alt="RDR2">
+      </div>
+      <div class="memory-card" data-framework="saddie">
+        <img class="front-face" src="images/sadie.jpg" alt="Saddie">
+        <img class="back-face" src="images/RDR.jpg" alt="RDR2">
+      </div>
 
-    <div class="memory-card" data-framework="ember">
-      <img class="front-face" src="../img/ember.svg" alt="Ember" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="ember">
-      <img class="front-face" src="../img/ember.svg" alt="Ember" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
-    </div>
+      <div class="memory-card" data-framework="dutch">
+        <img class="front-face" src="images/dutch.jpg" alt="Dutch">
+        <img class="back-face" src="images/RDR.jpg" alt="RDR2">
+      </div>
+      <div class="memory-card" data-framework="dutch">
+        <img class="front-face" src="images/dutch.jpg" alt="Dutch">
+        <img class="back-face" src="images/RDR.jpg" alt="RDR2">
+      </div>
 
-    <div class="memory-card" data-framework="backbone">
-      <img class="front-face" src="../img/backbone.svg" alt="Backbone" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="backbone">
-      <img class="front-face" src="../img/backbone.svg" alt="Backbone" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
-    </div>
+      <div class="memory-card" data-framework="charles">
+        <img class="front-face" src="images/charles.jpg" alt="Charles">
+        <img class="back-face" src="images/RDR.jpg" alt="RDR2">
+      </div>
+      <div class="memory-card" data-framework="charles">
+        <img class="front-face" src="images/charles.jpg" alt="Charles">
+        <img class="back-face" src="images/RDR.jpg" alt="RDR2">
+      </div>
 
-    <div class="memory-card" data-framework="react">
-      <img class="front-face" src="../img/react.svg" alt="React" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="react">
-      <img class="front-face" src="../img/react.svg" alt="React" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
-    </div>
+      <div class="memory-card" data-framework="javier">
+        <img class="front-face" src="images/javier.jpg" alt="Javier">
+        <img class="back-face" src="images/RDR.jpg" alt="RDR2">
+      </div>
+      <div class="memory-card" data-framework="javier">
+        <img class="front-face" src="images/javier.jpg" alt="Javier">
+        <img class="back-face" src="images/RDR.jpg" alt="RDR2">
+      </div>
+
   </section>
+
+  <dialog class="modal" id="modal">
+    <div class="tete">
+      <h1 id="titre">Projet personnel</h1>
+      <hr />
+      <p class="design" id="automne"> Design web gr.2 - Automne 2024</p>
+    </div>  
+  <div class="contenu">
+    <div class="texte">
+    <p><b>Réalisé par</b></p>
+    <p class="design">Christine Lehoux</p>
+    <br>
+    <p><b>Inspiration</b></p>
+    <p class="design"><a href="https://github.com/code-sketch/memory-game">https://github.com/code-sketch/memory-game</a></p>
+  </div>
+    <div class="image">
+      <img  class="megaman" src="images/megaman.png" alt="megaman" width="160" height="160">
+    </div>
+    
+  </div>  <div class="pied">
+    <button id="bouton">Fermer la fenêtre</button>
+    <p id="nonFenetre">Ne plus afficher cette fenêtre</p>
+  </div>
+  </dialog>
 
   <script src="scripts.js"></script>
 </body>
