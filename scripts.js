@@ -29,37 +29,54 @@ function checkForMatch() {
 
   isMatch ? disableCards() : unflipCards();
 }
+// Mon code pour activer les confettis et la carte lorsque le jeu prend fin
+// Prend la carte depuis mon html
 const bravo = document.getElementById("carte");
+// Ajoute la classe cache, pour le cacher pendant le temps de jeu
 bravo.classList.add('cache');
+// Ajoute variable pour compter combien de match cartes ont rester retourner
 let temp = 0;
+
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
+  // Ajoute 1 au temp lorsque 2 cartes matchs
   temp++;
 
-
+// Lorsque temp est égale à 6, donc lorsque toutes le cartes sont retournées
 if (temp == 6){
-  //Carte bravo
+  //Carte bravo, enlève classe cache
   bravo.classList.remove('cache');
-  bravo.classList.add('affiche');
+  // Met la carte en avant plan seulement lorsque c'est la fin du jeu
   bravo.classList.add('z-index');
   
 
   // Confettis
   const conteneurConfettis = document.getElementById('conteneur-confettis');
+  // Met les confettis en avant plan lorsque fin du jeu
   conteneurConfettis.classList.add('z-index');
+  /**
+   * Fonction pour afficher les confettis
+   */
   const AfficherConfettis = () => {
+  // Création d'une div
   const confetti = document.createElement('div');
+  // Met en forme de texte un emoji
   confetti.textContent = '✨';
+  // Ajoute au confetti la classe confetti
   confetti.classList.add('confetti');
+  // Met un chiffre aléatoire 
   confetti.style.left = Math.random() * innerWidth + 'px';
+  //
   conteneurConfettis.appendChild(confetti);
 
+  // Temps d'affichage des confettis
     setTimeout(() => {
       confetti.remove();
     }, 5000);
   };
 
+  // Temps d'affichage des confettis
   setInterval(() => {
     AfficherConfettis();
   }, 400);
@@ -95,6 +112,7 @@ function resetBoard() {
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 
+
 // MON CODE AJOUTER
 
 // Variables
@@ -102,12 +120,9 @@ const modal = document.getElementById("modal");
 const boutonFermer = document.getElementById("bouton");
 const texteClick = document.getElementById('nonFenetre');
 
-
 /**
  * Affiche le dialogue si pas de clé, si une clé n'affiche pas
- * Pour afficher le dialog à la suite d'une clé: 
- * localStorage.removeItem("modalCacher");
- */
+*/
 
 if(localStorage.getItem('modalCacher') !== 'false'){
   modal.showModal();
@@ -115,8 +130,13 @@ if(localStorage.getItem('modalCacher') !== 'false'){
   modal.close();
 }
 
+// if(window.Close){
+//  localStorage.removeItem("modalCacher");
+//}
+
 /**
  * Lorsque click sur Ne plus afficher la fenêtre, elle va créer une clé
+ * donc le dialogue ne se réaffichera pas, jusqu'à la fermeture de la fenêtre
  */
 texteClick.addEventListener('click', () => {
   localStorage.setItem('modalCacher', 'false');
@@ -129,49 +149,3 @@ texteClick.addEventListener('click', () => {
 boutonFermer.addEventListener('click', () => {
   modal.close();
 });
-
-
-
-
-
-
- 
-
-
-
-///// Confetti 2
-/*const canva = document.getElementById("confetti");
-const contexte = canvas.getContext('2d');
-const pieces = [];
-let nbPieces = 50;
-
-
-function MiseAJour(){
-
-  setTimeout(Update, 1);
-}
-
-
-function Dessiner(){
-
-  requestAnimationFrame(Dessiner);
-}
-
-
-function Piece (x, y){
-
-  this.x = x;
-  this.y = y;
-  this.taille = (Math.random() * 0.5 + 0.75) * 15;
-  this.gravite = (Math.random() * 0.5 + 0.75) * 0.01;
-  this.rotation = (Math.PI * 2) * Math.random();
-  this.rotationVitesse = (Math.PI * 2) * Math.random() * 0.001;
-}
-
-while (pieces.length < nbPieces){
-  pieces.push(new Piece(Math.random() * canvas.width, Math.random() * canvas.height));
-}
-
-
-MiseAJour();
-Dessiner();*/
