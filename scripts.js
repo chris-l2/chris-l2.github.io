@@ -29,8 +29,9 @@ function checkForMatch() {
 
   isMatch ? disableCards() : unflipCards();
 }
-// Mon code pour activer les confettis et la carte lorsque le jeu prend fin
-// Prend la carte depuis mon html
+//// Mon code pour activer les confettis et la carte lorsque le jeu prend fin
+
+// Prend la carte depuis le html
 const bravo = document.getElementById("carte");
 // Ajoute la classe cache, pour le cacher pendant le temps de jeu
 bravo.classList.add('cache');
@@ -59,24 +60,26 @@ if (temp == 6){
    * Fonction pour afficher les confettis
    */
   const AfficherConfettis = () => {
-  // Création d'une div
+  // Création d'une div pour les confettis
   const confetti = document.createElement('div');
-  // Met en forme de texte un emoji
+  // Met en forme de texte l'emoji choisis
   confetti.textContent = '✨';
-  // Ajoute au confetti la classe confetti
+  // Ajoute au confetti la classe confetti provenant du css
   confetti.classList.add('confetti');
-  // Met un chiffre aléatoire 
+  // Met des chiffres aléatoires pour que la position 
+  // des confettis apparaissent aléatoirement
+  // Math random = nombre aléatoire entre 0 et 1
   confetti.style.left = Math.random() * innerWidth + 'px';
-  //
+  // Met l'enfant (les confettis) dans le parent (le conteneur de confettis)
   conteneurConfettis.appendChild(confetti);
 
-  // Temps d'affichage des confettis
-    setTimeout(() => {
+  // Enlève les confettis après 5 secondes d'affichage
+      setTimeout(() => {
       confetti.remove();
     }, 5000);
   };
 
-  // Temps d'affichage des confettis
+  // Affiche des confettis tous les 400 millisecondes
   setInterval(() => {
     AfficherConfettis();
   }, 400);
@@ -84,8 +87,6 @@ if (temp == 6){
 }
   resetBoard();
 }
-
-
 
 function unflipCards() {
   lockBoard = true;
@@ -123,17 +124,16 @@ const texteClick = document.getElementById('nonFenetre');
 /**
  * Affiche le dialogue si pas de clé, si une clé n'affiche pas
 */
-
 if(localStorage.getItem('modalCacher') !== 'false'){
   modal.showModal();
 }else{
   modal.close();
 }
 
-// if(window.Close){
-//  localStorage.removeItem("modalCacher");
-//}
-
+if(window.open){
+  localStorage.removeItem("modalCacher");
+}
+//localStorage.removeItem("modalCacher");
 /**
  * Lorsque click sur Ne plus afficher la fenêtre, elle va créer une clé
  * donc le dialogue ne se réaffichera pas, jusqu'à la fermeture de la fenêtre
@@ -144,7 +144,7 @@ texteClick.addEventListener('click', () => {
 });
 
 /**
- * Lorsque le bouton est clicker, le dialogue se ferme
+ * Lorsque le bouton 'Fermer la fenêter' est clicker, le dialogue se ferme
  */
 boutonFermer.addEventListener('click', () => {
   modal.close();
